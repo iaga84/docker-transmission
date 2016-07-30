@@ -1,13 +1,6 @@
-FROM elventear/supervisord:latest
-
-MAINTAINER Pepe Barbe <dev@antropoide.net>
+FROM ubuntu:latest
 
 RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y software-properties-common 
-
-RUN add-apt-repository -y ppa:transmissionbt/ppa && \
-    apt-get update && \
     apt-get install -y transmission-daemon
 
 ADD files/transmission-daemon /etc/transmission-daemon
